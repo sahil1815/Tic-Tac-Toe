@@ -1,0 +1,162 @@
+/* style.css */
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50;
+    /* Dark blue background */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ecf0f1;
+    /* Light text color */
+}
+
+.msgs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+/* Main container for the game */
+.main {
+    background-color: #34495e;
+    /* Darker blue for the game container */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Container for the game board */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid layout for the Tic Tac Toe board */
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    /* Larger boxes */
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    gap: 10px;
+    max-width: 350px;
+    /* Slightly larger max-width */
+    width: 100%;
+    /* Make it responsive */
+}
+
+/* Individual boxes in the grid */
+.box {
+    background-color: #1abc9c;
+    /* Turquoise background for boxes */
+    border: 2px solid #16a085;
+    /* Darker turquoise border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    /* Larger font size */
+    font-weight: bold;
+    color: #fff;
+    /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    aspect-ratio: 1;
+    /* Ensure boxes are square */
+}
+
+/* Hover effect for the boxes */
+.box:hover {
+    background-color: #16a085;
+    /* Darker turquoise on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+/* Active effect for the boxes */
+.box:active {
+    transform: scale(0.95);
+    /* Slight shrink effect */
+}
+
+/* Styling for X and O */
+.box.x {
+    color: #e74c3c;
+    /* Red color for X */
+}
+
+.box.o {
+    color: #3498db;
+    /* Blue color for O */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .boxes {
+        grid-template-columns: repeat(3, minmax(80px, 1fr));
+        /* Smaller boxes on small screens */
+        grid-template-rows: repeat(3, minmax(80px, 1fr));
+        gap: 5px;
+    }
+
+    .box {
+        font-size: 2.5em;
+        /* Slightly smaller font size for small screens */
+    }
+}
+
+/* Optional: Add a title or instructions */
+.title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+.subtitle {
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #bdc3c7;
+}
+
+/* Controls styling */
+.controls {
+    margin-top: 20px;
+}
+
+#reset-button,
+#new-game {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover,
+#new-game:hover {
+    background-color: #c0392b;
+}
+
+/* Message styling */
+.message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #ecf0f1;
+}
