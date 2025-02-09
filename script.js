@@ -1,9 +1,9 @@
 const box = document.querySelectorAll(".box");
 const reset = document.querySelector("#reset-button");
-const newGame = document.querySelector("#new-game");
 const msg = document.querySelector(".message");
 const showHide = document.querySelector(".msgs");
 
+reset.textContent = "New Game";
 let winConfig = [
     [0, 1, 2],
     [3, 4, 5],
@@ -18,7 +18,7 @@ let personO = true;
 let count = 0;
 box.forEach(element => {
     element.addEventListener("click", () => {
-
+        reset.textContent = "Reset Game";
         if (personO) {
             element.classList.add("o");
             element.textContent = "O";
@@ -46,7 +46,9 @@ const checkWinner = () => {
         if (pos1 != "" && pos2 != "" && pos3 != "") {
             if (pos1 === pos2 && pos2 === pos3) {
                 showHide.classList.remove("hide");
+                reset.textContent = "New Game";
                 msg.textContent = `Congratulations! Winner is ${pos1}`;
+
                 box.forEach(element => {
                     element.disabled = true;
                 });
@@ -56,6 +58,7 @@ const checkWinner = () => {
     }
     if (count == 9) {
         showHide.classList.remove("hide");
+        reset.textContent = "New Game";
         msg.textContent = `The Game is Draw!`;
         return;
     }
@@ -66,7 +69,7 @@ const resetGame = () => {
         element.classList.remove("o", "x");
         element.disabled = false;
     });
-
+    reset.textContent = "New Game";
     showHide.classList.add("hide");
     personO = true;
     count = 0;
