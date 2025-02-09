@@ -121,8 +121,7 @@ body {
     margin-top: 20px;
 }
 
-#reset-button,
-#new-game {
+#reset-button {
     background-color: #e74c3c;
     color: #fff;
     border: none;
@@ -133,8 +132,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#reset-button:hover,
-#new-game:hover {
+#reset-button:hover {
     background-color: #c0392b;
 }
 
